@@ -50,6 +50,11 @@
     "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj59jkzwz9bo30174x1ibtu8p node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "graphql": {
+    "request": {
+      "url": "https://api.graph.cool/relay/v1/cj59jkzwz9bo30174x1ibtu8p"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
