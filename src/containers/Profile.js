@@ -10,19 +10,51 @@ class Profile extends Component {
         {
           winner: true,
           createdAt: '12/20/2016',
+          id: '0001'
+        },
+        {
+          winner: false,
+          createdAt: '12/22/2016',
           id: '0002'
+        },
+        {
+          winner: true,
+          createdAt: '12/24/2016',
+          id: '0003'
         }
+
       ]
     }
+  }
+
+  get records() {
+    return this.props.user.games.map((game, index) => {
+      return (
+        <GameRecord
+          key={index}
+          index={index}
+        >
+          <Column>
+            {(game.winner)? 'Won!': "Didn't win"}
+          </Column>
+          <Column>
+            "ROBOT"
+          </Column>
+          <Column>
+            "NO"
+          </Column>
+          <Column>
+            {game.createdAt}
+          </Column>
+        </GameRecord>
+      )
+    })
   }
 
   render() {
     let {email} = this.props.user
     return (     
       <Container>
-        <div>
-          <h2>Profile!</h2>
-        </div>
         <Name>
           {email}  
         </Name>
@@ -44,6 +76,7 @@ class Profile extends Component {
               Date
             </Column>
           </ColumnLabels>
+          {this.records}
         </GameList>
       </Container>
     )
