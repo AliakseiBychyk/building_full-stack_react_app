@@ -18,14 +18,9 @@ const createHeaders = () => {
     return {}
   }
 }
- 
-console.log(Relay)
 
 Relay.injectNetworkLayer(
   new RelayNetworkLayer([
-    // batchMiddleware({
-    //   batchUrl: (req) => `${relayApi}/batch`
-    // }),
     urlMiddleware({
       url: (req) => relayApi,
     }),
