@@ -14,7 +14,10 @@ class Template extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <NavDrawer />
+          <NavDrawer
+            auth={this.props.route.auth}
+            authenticated={this.props.viewer.user}
+          />
           <Header>
             Tic Tac Turing  
           </Header>
@@ -32,7 +35,7 @@ export default Relay.createContainer(
     fragments: {
       viewer: () => Relay.QL`
         fragment on Viewer {
-          user{
+          user {
             id
           }
         }
