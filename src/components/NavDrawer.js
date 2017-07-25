@@ -30,7 +30,6 @@ class NavDrawer extends Component {
         <Drawer
           open={this.state.open}
           width={this.state.width}
-          open={this.state.open}
         >
           <div
             style={{
