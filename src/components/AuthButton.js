@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 
 const AuthButton = (props) => {
+  console.log(props.authenticated) // to remove later on
   if (props.authenticated) {
     return (
       <RaisedButton

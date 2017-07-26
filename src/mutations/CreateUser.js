@@ -9,7 +9,7 @@ export default class CreateUser extends Relay.Mutation {
         auth0: {
           idToken: this.props.idToken
         }
-      }
+      },
     }
   }
 
